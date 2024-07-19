@@ -16,6 +16,10 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-      
+        
+        # try adding these commands to the scripts in package.json file
+      - name: Generate prisma Client
+        run: cd db/packages && npx prisma generate && cd ../..
+        
       - name: Run Build
         run: npm run Build
